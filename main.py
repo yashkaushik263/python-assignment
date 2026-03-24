@@ -1,27 +1,28 @@
-import shapes
-print("Choose a shape to find area:")
-print("1. Circle")
-print("2. Rectangle")
-print("3. Triangle")
+from temperature.celsius import c_to_f, c_to_k
+from temperature.fahrenheit import f_to_c
+from temperature.kelvin import k_to_c
 
-choice = int(input("Enter your choice (1-3): "))
+def main():
+    print("Temperature conversion options")
+    print("1. Celsius to Fahrenheit")
+    print("2. Fahrenheit to celsius")
+    print("3. Celsius to kelvin")
 
-if choice == 1:
-    r = float(input("Enter radius of circle: "))
-    area = shapes.area_circle(r)
-    print("Area of Circle =", area)
+    choice = int(input("Enter your choice (1/2/3):"))
 
-elif choice == 2:
-    l = float(input("Enter length of rectangle: "))
-    w = float(input("Enter width of rectangle: "))
-    area = shapes.area_rectangle(l, w)
-    print("Area of Rectangle =", area)
+    if choice == 1:
+        celsius = float(input("Enter temperature in celsius"))
+        print(f"{celsius} C = {c_to_f(celsius)}")
 
-elif choice == 3:
-    l = float(input("Enter length of triangle: "))
-    w = float(input("Enter width of triangle: "))
-    area = shapes.area_triangle(l, w)
-    print("Area of Triangle =", area)
+    elif choice == 2:
+        fahrenheit = float(input("Enter temperature is Fahreneit"))
+        print(f"{fahrenheit}F = {f_to_c (fahrenheit)} C")
 
-else:
-    print("Invalid choice")
+    elif choice == 3:
+        celsius = float(input("Enter the temperature in celsius"))
+        print(f"{celsius} C = {c_to_k(celsius)} k")
+
+    else:
+        print("Invalid choice")
+
+main()
